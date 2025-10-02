@@ -1,51 +1,72 @@
 <!DOCTYPE html>
-<html lamg = "ru">
-    <head>
+<html lamg="ru">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Товары</title>
     <link rel="stylesheet" href="../style/styles.css">
 </head>
+
 <body>
     <div class="page-container">
-            <div class="header">Хэдер</div>
-            <div class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link"
-    href="../index.html">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link"
-    href="news.html">Новости</a></li>
-                    <li class="nav-item"><a class="nav-link"
-    href="practices.html">Практики</a></li>
-                    <li class="nav-item"><a class="nav-link"
-    href="goods.html">Товары</a></li>
-                    <li class="nav-item"><a class="nav-link"
-    href="contacts.html">Контакты</a></li>
-                </ul>
-            </div>
-    <div id="content">
-        <h2 class = "section-title">Наши товары</h2>
-        <div class = "products-grid">
-            <div class = "products-card">
-                <img class = "product-image" src="../images/sword.png" alt="Меч" width="200"
-                height="250">
-                <h3 class = "product-name">Товар 1</h3>
-                <p class = "product-price">Цена товара 500000 рублей</p>
-            </div>
-            
-            <div class = "products-card">
-                <img class = "product-image" src="../images/shit.png" alt="Щит" width="200"
-                height="250">
-                <h3 class = "product-name">Товар 2</h3>
-                <p class = "product-price">Цена товара 150000 рублей</p>
-            </div>
+        <header class="header">
+            <h1>Товары</h1>
+        </header>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <section class="products-selection">
+                <h2 class="section-title">Каталог товаров</h2>
+                <p class="section-description">Мы предлагаем широкий ассортимент доступных товаров</p>
+                <div class="products-grid">
+                    <article class="products-card">
+                        <div class="product-image-container">
+                            <img class="product-image" src="../images/sword.png" alt="Меч">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Экскалибур</h3>
+                            <p class="product-description">Лучший меч, Великого героя!</p>
+                            <p class="product-price">500000 ₽</p>
+                            <button class="product-button">В корзину</button>
+                        </div>
+                    </article>
 
-            <div class = "products-card">
-                <img class = "product-image" src="../images/lyk.png" alt="Лук" width="200"
-                height="250">
-                <h3 class = "product-name">Товар 3</h3>
-                <p class = "product-price">Цена товара 50000 рублей</p>
-            </div>
-        </div>
-</div>
-<div class="footer">Футер</div>
+                    <article class="products-card">
+                        <div class="product-image-container">
+                            <img class="product-image" src="../images/shit.png" alt="Щит">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Могучий Щит</h3>
+                            <p class="product-description">Единственный своем роде щит из мифрила</p>
+                            <p class="product-price">150000 ₽</p>
+                            <button class="product-button">В корзину</button>
+                        </div>
+                    </article>
+
+                    <article class="products-card">
+                        <div class="product-image-container">
+                            <img class="product-image" src="../images/lyk.png" alt="Лук">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Лук Запределья</h3>
+                            <p class="product-description">Лук великого героя Запределья</p>
+                            <p class="product-price">50000 ₽</p>
+                            <button class="product-button">В корзину</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <div class="footer">Футер</div>
+    </div>
+</body>
+
+</html>

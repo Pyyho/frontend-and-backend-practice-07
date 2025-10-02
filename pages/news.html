@@ -1,44 +1,65 @@
 <!DOCTYPE html>
-<html lamg = "ru">
-    <head>
+<html lamg="ru">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новости</title>
     <link rel="stylesheet" href="../style/styles.css">
 </head>
+
 <body>
     <div class="page-container">
-            <div class="header">Хэдер</div>
-            <div class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link"
-    href="../index.html">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link"
-    href="news.html">Новости</a></li>
-                    <li class="nav-item"><a class="nav-link"
-    href="practices.html">Практики</a></li>
-                    <li class="nav-item"><a class="nav-link"
-    href="goods.html">Товары</a></li>
-                    <li class="nav-item"><a class="nav-link"
-    href="contacts.html">Контакты</a></li>
-                </ul>
-            </div>
-            <div class = "news-container">
-                <div class = "news-card">
-                    <h2 class = "news-title">Сенсеция!!!</h2>
-                    <p class = "news-meta">02.11.2225 12:00 Р.У.Астафьев</p>
-                    <p class = "news-text">Был выбран презедент мира</p>
-                </div>
-                <div class = "news-card">
-                    <h2 class = "news-title">Знамянательный День</h2>
-                    <p class = "news-meta">03.11.2325 12:00 Р.У.Астафьев</p>
-                    <p class = "news-text">Был перевыбран презедент мира</p>
-                </div>
-                <div class = "news-card">
-                    <h2 class = "news-title">Конец Всему!!!</h2>
-                    <p class = "news-meta">04.11.2425 12:00 Р.У.Астафьев</p>
-                    <p class = "news-text">Презедента мира больше НЕТ!!!</p>
-                </div>
-            </div>
-            <div class="footer">Футер</div>
+        <div class="header">Новости</div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <section class="news-container">
+                <h2 class="section-title">Последние новости</h2>
+                <article class="news-card">
+                    <header class="news-header">
+                        <h2 class="news-title">Сенсеция!!!</h2>
+                        <p class="news-meta">02.11.2225 12:00 Р.У.Астафьев</p>
+                    </header>
+                    <div class="news-content">
+                        <p class="news-text">Был выбран презедент мира. Такой-то Такой-то Возглавил человечество во всех
+                            сверах</p>
+                        <a href="#" class="news-link">Читать далее....</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <header class="news-header">
+                        <h2 class="news-title">Знамянательный День</h2>
+                        <p class="news-meta">03.11.2325 12:00 Р.У.Астафьев</p>
+                    </header>
+                    <div class="news-content">
+                        <p class="news-text">Был перевыбран презедент мира.</p>
+                        <a href="#" class="news-link">Читать далее....</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <header class="news-header">
+                        <h2 class="news-title">Конец Всему!!!</h2>
+                        <p class="news-meta">04.11.2425 12:00 Р.У.Астафьев</p>
+                    </header>
+                    <div class="news-content">
+                        <p class="news-text">Презедента мира больше НЕТ!!!</p>
+                        <a href="#" class="news-link">Читать далее....</a>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <div class="footer">Футер</div>
+    </div>
 </body>
+
+</html>

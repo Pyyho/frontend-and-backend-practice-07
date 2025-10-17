@@ -95,13 +95,18 @@
                             placeholder="Опишите вашу проблему или вопрос..."></textarea>
                     </div>
                     <div class="modal-actions">
-                        <button type="submit" class="btn btn-secondary">Отмена</button>
+                        <button type="button" class="btn btn-secondary" onclick="closeModal()">Отмена</button>
                         <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
                     </div>
                 </form>
             </div>
         </dialog>
         <script>
+            function closeModal() {
+                const modal = document.getElementById('contactModal');
+                modal.close();
+            }
+
             function submitForm() {
                 const form = document.getElementById('feedbackForm');
                 const formData = new FormData(form);
@@ -116,16 +121,11 @@
                     category: formData.get('category'),
                     message: formData.get('message')
                 };
-                // В реальном приложении здесь был бы AJAX-запрос
                 console.log('Данные формы:', data);
-                // Показываем уведомление об успешной отправке
                 alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вамив ближайшее время.');
-                // Закрываем модальное окно
                 contactModal.close();
-                // Очищаем форму
                 form.reset();
             }
-            // Закрытие модального окна по клику на фон
             document.getElementById('contactModal').addEventListener('click',
                 function (event) {
                     if (event.target === this) {

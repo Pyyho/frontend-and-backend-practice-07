@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Товары - Портфолио</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../style/styles.css">
+
 </head>
+
 <body class="bg-light">
     <div class="container-fluid p-0">
         <header class="bg-success text-white py-4">
@@ -15,7 +17,6 @@
                 <div class="row align-items-center">
                     <div class="col">
                         <h1 class="h3 mb-1">Товары</h1>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -68,46 +69,65 @@
                     </div>
                     <div class="card-body">
                         <p class="card-text mb-4">Мы предлагаем широкий ассортимент доступных товаров</p>
-                        
-                        <div class="row g-4">
-                            <div class="col-md-4">
-                                <div class="card h-100 shadow-sm">
-                                    <div class="product-image-container text-center p-3">
-                                        <img src="../images/sword.png" class="card-img-top" alt="Меч" style="height: 200px; object-fit: contain;">
-                                    </div>
-                                    <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title">Экскалибур</h5>
-                                        <p class="card-text flex-grow-1">Лучший меч Великого героя!</p>
-                                        <p class="product-price h5 text-primary">500000 ₽</p>
-                                        <button class="btn btn-primary mt-auto">В корзину</button>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="col-md-4">
-                                <div class="card h-100 shadow-sm">
-                                    <div class="product-image-container text-center p-3">
-                                        <img src="../images/shit.png" class="card-img-top" alt="Щит" style="height: 200px; object-fit: contain;">
-                                    </div>
-                                    <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title">Могучий Щит</h5>
-                                        <p class="card-text flex-grow-1">Единственный в своем роде щит из мифрила</p>
-                                        <p class="product-price h5 text-primary">150000 ₽</p>
-                                        <button class="btn btn-primary mt-auto">В корзину</button>
+                        <!-- Вертикальное расположение товаров -->
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- Товар 1 -->
+                                <div class="card product-card shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-3 text-center p-3">
+                                            <img src="../images/sword.png" class="img-fluid product-image" alt="Меч">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="card-body d-flex flex-column h-100">
+                                                <h5 class="card-title">Экскалибур</h5>
+                                                <p class="card-text flex-grow-1">Лучший меч Великого героя!</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <p class="product-price h5 text-primary mb-0">500000 ₽</p>
+                                                    <button class="btn btn-primary">В корзину</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
- 
-                            <div class="col-md-4">
-                                <div class="card h-100 shadow-sm">
-                                    <div class="product-image-container text-center p-3">
-                                        <img src="../images/lyk.png" class="card-img-top" alt="Лук" style="height: 200px; object-fit: contain;">
+
+                                <!-- Товар 2 -->
+                                <div class="card product-card shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-3 text-center p-3">
+                                            <img src="../images/shit.png" class="img-fluid product-image" alt="Щит">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="card-body d-flex flex-column h-100">
+                                                <h5 class="card-title">Могучий Щит</h5>
+                                                <p class="card-text flex-grow-1">Единственный в своем роде щит из
+                                                    мифрила</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <p class="product-price h5 text-primary mb-0">150000 ₽</p>
+                                                    <button class="btn btn-primary">В корзину</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title">Лук Запределья</h5>
-                                        <p class="card-text flex-grow-1">Лук великого героя Запределья</p>
-                                        <p class="product-price h5 text-primary">50000 ₽</p>
-                                        <button class="btn btn-primary mt-auto">В корзину</button>
+                                </div>
+
+                                <!-- Товар 3 -->
+                                <div class="card product-card shadow-sm">
+                                    <div class="row g-0">
+                                        <div class="col-md-3 text-center p-3">
+                                            <img src="../images/lyk.png" class="img-fluid product-image" alt="Лук">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="card-body d-flex flex-column h-100">
+                                                <h5 class="card-title">Лук Запределья</h5>
+                                                <p class="card-text flex-grow-1">Лук великого героя Запределья</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <p class="product-price h5 text-primary mb-0">50000 ₽</p>
+                                                    <button class="btn btn-primary">В корзину</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -134,4 +154,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

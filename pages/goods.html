@@ -12,6 +12,9 @@
     <div class="page-container">
         <header class="header">
             <h1>Товары</h1>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
+                <span class="theme-icon">🌙</span>
+            </button>
         </header>
         <nav class="nav">
             <ul class="nav-list">
@@ -67,6 +70,28 @@
         </main>
         <div class="footer">Футер</div>
     </div>
-</body>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.getElementById('theme-toggle');
+        const themeIcon = toggleButton.querySelector('.theme-icon');
 
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        let currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+        applyTheme(currentTheme);
+
+        toggleButton.addEventListener('click', function() {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            applyTheme(currentTheme);
+        });
+        
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+            localStorage.setItem('theme', theme);
+        }
+    });
+    </script>
+</body>
 </html>

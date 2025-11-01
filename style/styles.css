@@ -1,5 +1,6 @@
 /* ===== БАЗОВЫЕ СТИЛИ ===== */
 :root {
+  /* Светлая тема */
   --color-main: #2c3e50;
   --color-accent: #3498db;
   --color-light: #ecf0f1;
@@ -10,14 +11,20 @@
   --color-border-left: #017414;
   --color-shadow: rgba(5, 255, 172, 0.4);
   --color-red: #e74c3c;
+  --color-nav-bg: #017414;
+  --color-card-bg: #ffffff;
+  --color-skill-bg: linear-gradient(135deg, #15ff00 0%, #000000 100%);
+  --color-about-bg: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
+
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #ffffff 0%, #000000 100%);
+  background: var(--color-white);
   min-height: 100vh;
+  color: var(--color-text);
 }
 
 
@@ -48,16 +55,16 @@ body {
   font-weight: 300;
   letter-spacing: 2px;
   grid-area: header;
+  position: relative;
 }
 
 
 /* ===== НАВИГАЦИЯ ===== */
 .nav {
-  background: var(--color-border-left);
+  background: var(--color-nav-bg);
   padding: 20px 0;
   grid-area: nav;
 }
-
 
 .nav-list {
   list-style: none;
@@ -95,8 +102,9 @@ main.content {
   max-width: 900px;
   margin: 0 auto;
   grid-area: main;
+  background: var(--color-white);
+  color: var(--color-text);
 }
-
 
 /* ===== ГЛАВНАЯ СТРАНИЦА ===== */
 .profile-header {
@@ -134,20 +142,22 @@ main.content {
 
 .profile-group {
   font-size: 18px;
-  color: #7f8c8d;
+  color: var(--color-text);
+  opacity: 0.7;
   margin: 5px 0;
 }
 
-
 .about-me {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: var(--color-about-bg);
   padding: 25px;
   border-radius: 15px;
   margin: 30px 0;
   border-left: 5px solid var(--color-border-left);
   font-size: 16px;
   line-height: 1.8;
+  color: var(--color-text);
 }
+
 
 
 /* ===== НАВЫКИ ===== */
@@ -160,7 +170,7 @@ main.content {
 
 
 .skill-tag {
-  background: var(--color-background);
+  background: var(--color-skill-bg);
   color: var(--color-white);
   padding: 12px 25px;
   border-radius: 25px;
@@ -199,13 +209,14 @@ main.content {
 }
 
 .experience-card {
-  background: var(--color-white);
+  background: var(--color-card-bg);
   padding: 25px;
   margin: 20px 0;
   border-radius: 12px;
   box-shadow: 0 6px 20px var(--color-shadow);
   border-left: 4px solid var(--color-border-left);
   transition: transform 0.3s ease;
+  color: var(--color-text);
 }
 
 
@@ -223,11 +234,11 @@ main.content {
 
 
 .experience-desc {
-  color: #7f8c8d;
+  color: var(--color-text);
+  opacity: 0.7;
   line-height: 1.6;
   margin: 0;
 }
-
 
 /* ===== ФУТЕР ===== */
 .footer {
@@ -236,6 +247,63 @@ main.content {
   text-align: center;
   padding: 30px;
   margin-top: 50px;
+}
+
+/* ===== КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ ===== */
+.theme-toggle {
+  background: var(--color-white);
+  border: 2px solid var(--color-white);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Обновляем остальные элементы для темной темы */
+.products-card,
+.news-card,
+.contact-item {
+  background: var(--color-card-bg);
+  color: var(--color-text);
+}
+
+.product-name,
+.news-title,
+.contact-info {
+  color: var(--color-text);
+}
+
+.product-description,
+.news-text,
+.news-meta {
+  color: var(--color-text);
+  opacity: 0.7;
+}
+
+.form-group label {
+  color: var(--color-text);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: var(--color-white);
+  color: var(--color-text);
+  border-color: var(--color-border-left);
 }
 
 .contact-button {
@@ -862,4 +930,50 @@ main.content {
     width: 120px;
     height: 150px;
   }
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --header-bg: #f8f9fa;
+    --border-color: #dee2e6;
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --color-main: #ecf0f1;
+  --color-accent: #4da6ff;
+  --color-light: #2c3e50;
+  --color-dark: #ecf0f1;
+  --color-text: #ffffff;
+  --color-white: #1a1a1a;
+  --color-background: linear-gradient(135deg, #0a5c00 0%, #2d2d2d 100%);
+  --color-border-left: #00cc2c;
+  --color-shadow: rgba(5, 255, 172, 0.2);
+  --color-red: #ff6b6b;
+  --color-nav-bg: #0a5c00;
+  --color-card-bg: #2d2d2d;
+  --color-skill-bg: linear-gradient(135deg, #0a5c00 0%, #2d2d2d 100%);
+  --color-about-bg: linear-gradient(135deg, #363636 0%, #2d2d2d 100%);
+}
+
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--text-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
 }

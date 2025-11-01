@@ -7,7 +7,136 @@
     <title>Товары - Портфолио</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        /* Стили для переключения темы */
+        :root {
+            --bg-light: #f8f9fa;
+            --bg-dark: #1a1a1a;
+            --text-light: #212529;
+            --text-dark: #ffffff;
+            --card-bg-light: #ffffff;
+            --card-bg-dark: #2d2d2d;
+            --header-bg-light: #198754;
+            --header-bg-dark: #0d6efd;
+            --nav-bg-light: #6c757d;
+            --nav-bg-dark: #495057;
+            --footer-bg-light: #6c757d;
+            --footer-bg-dark: #495057;
+        }
 
+        [data-theme="dark"] {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+        }
+
+        [data-theme="dark"] body {
+            background-color: var(--bg-dark) !important;
+            color: var(--text-dark) !important;
+        }
+
+        [data-theme="dark"] .bg-light {
+            background-color: var(--bg-dark) !important;
+            color: var(--text-dark) !important;
+        }
+
+        [data-theme="dark"] .bg-success {
+            background-color: var(--header-bg-dark) !important;
+        }
+
+        [data-theme="dark"] .bg-secondary {
+            background-color: var(--nav-bg-dark) !important;
+        }
+
+        [data-theme="dark"] .card {
+            background-color: var(--card-bg-dark) !important;
+            color: var(--text-dark) !important;
+            border-color: #444444;
+        }
+
+        [data-theme="dark"] .card-header.bg-light {
+            background-color: #363636 !important;
+            color: var(--text-dark) !important;
+        }
+
+        [data-theme="dark"] .text-dark {
+            color: var(--text-dark) !important;
+        }
+
+        [data-theme="dark"] .text-muted {
+            color: #adb5bd !important;
+        }
+
+        [data-theme="dark"] .card-text.text-muted {
+            color: #adb5bd !important;
+        }
+
+        [data-theme="dark"] footer.bg-secondary {
+            background-color: var(--footer-bg-dark) !important;
+        }
+
+        [data-theme="dark"] .product-card {
+            background-color: var(--card-bg-dark) !important;
+            border-color: #444444;
+        }
+
+        [data-theme="dark"] .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
+
+        /* Стили для кнопки темы */
+        .theme-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        [data-theme="dark"] .theme-toggle {
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        /* Плавные переходы */
+        body, .card, .bg-light, .bg-success, .bg-secondary, .product-card {
+            transition: all 0.3s ease;
+        }
+
+        /* Позиционирование для хедера */
+        header {
+            position: relative;
+        }
+
+        /* Стили для карточек товаров */
+        .product-card {
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+        }
+
+        .product-image {
+            max-height: 150px;
+            object-fit: contain;
+        }
+    </style>
 </head>
 
 <body class="bg-light">
@@ -20,6 +149,10 @@
                     </div>
                 </div>
             </div>
+            <!-- Кнопка переключения темы -->
+            <button id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
+                <span class="theme-icon">🌙</span>
+            </button>
         </header>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
@@ -30,7 +163,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="../index.html">
+                            <a class="nav-link" href="../index.html">
                                 <i class="bi bi-house me-1"></i>Главная
                             </a>
                         </li>
@@ -148,6 +281,35 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Переключение темы
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.getElementById('theme-toggle');
+            const themeIcon = toggleButton.querySelector('.theme-icon');
+            
+            // Проверяем сохраненную тему или системные настройки
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            let currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            
+            // Применяем тему при загрузке
+            applyTheme(currentTheme);
+            
+            // Обработчик клика
+            toggleButton.addEventListener('click', function() {
+                currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+                applyTheme(currentTheme);
+            });
+            
+            function applyTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+                localStorage.setItem('theme', theme);
+            }
+        });
+    </script>
 </body>
 
 </html>

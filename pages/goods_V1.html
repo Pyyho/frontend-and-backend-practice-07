@@ -130,11 +130,37 @@
             margin-bottom: 20px;
             border: 1px solid #dee2e6;
             border-radius: 0.375rem;
+            height: 100%;
         }
 
         .product-image {
             max-height: 150px;
             object-fit: contain;
+        }
+        
+        /* Стили для фиксированного футера */
+        html, body {
+            height: 100%;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container-fluid {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        footer {
+            margin-top: auto;
         }
     </style>
 </head>
@@ -204,53 +230,50 @@
                         <p class="card-text mb-4">Мы предлагаем широкий ассортимент доступных товаров</p>
                         <div class="row">
                             <div class="col-12">
-                                <div class="card product-card shadow-sm">
-                                    <div class="row g-0">
-                                        <div class="col-md-3 text-center p-3">
-                                            <img src="../images/sword.png" class="img-fluid product-image" alt="Меч">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <div class="card-body d-flex flex-column h-100">
+                                <!-- Горизонтальное расположение товаров -->
+                                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                                    <div class="col">
+                                        <div class="card product-card shadow-sm h-100">
+                                            <div class="text-center p-3">
+                                                <img src="../images/sword.png" class="img-fluid product-image" alt="Меч">
+                                            </div>
+                                            <div class="card-body d-flex flex-column">
                                                 <h5 class="card-title">Экскалибур</h5>
                                                 <p class="card-text flex-grow-1">Лучший меч Великого героя!</p>
-                                                <div class="d-flex justify-content-between align-items-center">
+                                                <div class="d-flex justify-content-between align-items-center mt-auto">
                                                     <p class="product-price h5 text-primary mb-0">500000 ₽</p>
                                                     <button class="btn btn-primary">В корзину</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                
-                                <div class="card product-card shadow-sm">
-                                    <div class="row g-0">
-                                        <div class="col-md-3 text-center p-3">
-                                            <img src="../images/shit.png" class="img-fluid product-image" alt="Щит">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <div class="card-body d-flex flex-column h-100">
+                                    
+                                    <div class="col">
+                                        <div class="card product-card shadow-sm h-100">
+                                            <div class="text-center p-3">
+                                                <img src="../images/shit.png" class="img-fluid product-image" alt="Щит">
+                                            </div>
+                                            <div class="card-body d-flex flex-column">
                                                 <h5 class="card-title">Могучий Щит</h5>
                                                 <p class="card-text flex-grow-1">Единственный в своем роде щит из
                                                     мифрила</p>
-                                                <div class="d-flex justify-content-between align-items-center">
+                                                <div class="d-flex justify-content-between align-items-center mt-auto">
                                                     <p class="product-price h5 text-primary mb-0">150000 ₽</p>
                                                     <button class="btn btn-primary">В корзину</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="card product-card shadow-sm">
-                                    <div class="row g-0">
-                                        <div class="col-md-3 text-center p-3">
-                                            <img src="../images/lyk.png" class="img-fluid product-image" alt="Лук">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <div class="card-body d-flex flex-column h-100">
+                                    <div class="col">
+                                        <div class="card product-card shadow-sm h-100">
+                                            <div class="text-center p-3">
+                                                <img src="../images/lyk.png" class="img-fluid product-image" alt="Лук">
+                                            </div>
+                                            <div class="card-body d-flex flex-column">
                                                 <h5 class="card-title">Лук Запределья</h5>
                                                 <p class="card-text flex-grow-1">Лук великого героя Запределья</p>
-                                                <div class="d-flex justify-content-between align-items-center">
+                                                <div class="d-flex justify-content-between align-items-center mt-auto">
                                                     <p class="product-price h5 text-primary mb-0">50000 ₽</p>
                                                     <button class="btn btn-primary">В корзину</button>
                                                 </div>
@@ -265,7 +288,7 @@
             </section>
         </main>
 
-        <footer class="bg-secondary text-white py-4 mt-5">
+        <footer class="bg-secondary text-white py-4">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
